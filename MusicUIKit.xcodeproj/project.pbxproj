@@ -13,6 +13,8 @@
 		DEF45F12267CFDD3001B7351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F10267CFDD3001B7351 /* Main.storyboard */; };
 		DEF45F14267CFDD5001B7351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F13267CFDD5001B7351 /* Assets.xcassets */; };
 		DEF45F17267CFDD5001B7351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F15267CFDD5001B7351 /* LaunchScreen.storyboard */; };
+		DEF45F21267D0438001B7351 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F1F267D0437001B7351 /* data.json */; };
+		DEF45F22267D0438001B7351 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F20267D0438001B7351 /* MusicService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DEF45F13267CFDD5001B7351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEF45F16267CFDD5001B7351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEF45F18267CFDD5001B7351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF45F1F267D0437001B7351 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		DEF45F20267D0438001B7351 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				DEF45F0A267CFDD3001B7351 /* AppDelegate.swift */,
 				DEF45F0C267CFDD3001B7351 /* SceneDelegate.swift */,
 				DEF45F0E267CFDD3001B7351 /* ViewController.swift */,
+				DEF45F1F267D0437001B7351 /* data.json */,
+				DEF45F20267D0438001B7351 /* MusicService.swift */,
 				DEF45F10267CFDD3001B7351 /* Main.storyboard */,
 				DEF45F13267CFDD5001B7351 /* Assets.xcassets */,
 				DEF45F15267CFDD5001B7351 /* LaunchScreen.storyboard */,
@@ -127,6 +133,7 @@
 				DEF45F17267CFDD5001B7351 /* LaunchScreen.storyboard in Resources */,
 				DEF45F14267CFDD5001B7351 /* Assets.xcassets in Resources */,
 				DEF45F12267CFDD3001B7351 /* Main.storyboard in Resources */,
+				DEF45F21267D0438001B7351 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 				DEF45F0F267CFDD3001B7351 /* ViewController.swift in Sources */,
 				DEF45F0B267CFDD3001B7351 /* AppDelegate.swift in Sources */,
 				DEF45F0D267CFDD3001B7351 /* SceneDelegate.swift in Sources */,
+				DEF45F22267D0438001B7351 /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
