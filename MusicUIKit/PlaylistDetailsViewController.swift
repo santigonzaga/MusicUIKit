@@ -9,7 +9,6 @@ import UIKit
 
 class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
     
-
     @IBOutlet weak var imageCover: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -43,7 +42,6 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         guard let cell = playlistTableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistDetailTableViewCell else {
             fatalError("Não foi possivel converter a celula para SongCell")
         }
@@ -51,9 +49,10 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
         cell.artistMusicLabel.text = music?.artist
         cell.titleMusicLabel.text = music?.title
         cell.imageCoverMusic.image = musicService?.getCoverImage(forItemIded: music?.id ?? "")
+        cell.music = music
+        cell.musicService = musicService 
         
         return cell
-        
     }
 
 }
