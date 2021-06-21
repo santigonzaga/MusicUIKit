@@ -16,6 +16,8 @@
 		DEF45F21267D0438001B7351 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F1F267D0437001B7351 /* data.json */; };
 		DEF45F22267D0438001B7351 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F20267D0438001B7351 /* MusicService.swift */; };
 		DEF45F25267D2420001B7351 /* LibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F24267D2420001B7351 /* LibraryTableViewCell.swift */; };
+		DEF45F3C2680FCFF001B7351 /* PlaylistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F3B2680FCFF001B7351 /* PlaylistDetailsViewController.swift */; };
+		DEF45F432680FE7A001B7351 /* PlaylistDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F422680FE7A001B7351 /* PlaylistDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DEF45F1F267D0437001B7351 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DEF45F20267D0438001B7351 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		DEF45F24267D2420001B7351 /* LibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewCell.swift; sourceTree = "<group>"; };
+		DEF45F3B2680FCFF001B7351 /* PlaylistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsViewController.swift; sourceTree = "<group>"; };
+		DEF45F422680FE7A001B7351 /* PlaylistDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +70,11 @@
 				DEF45F0C267CFDD3001B7351 /* SceneDelegate.swift */,
 				DEF45F0E267CFDD3001B7351 /* ViewController.swift */,
 				DEF45F24267D2420001B7351 /* LibraryTableViewCell.swift */,
+				DEF45F422680FE7A001B7351 /* PlaylistDetailTableViewCell.swift */,
 				DEF45F1F267D0437001B7351 /* data.json */,
 				DEF45F20267D0438001B7351 /* MusicService.swift */,
 				DEF45F10267CFDD3001B7351 /* Main.storyboard */,
+				DEF45F3B2680FCFF001B7351 /* PlaylistDetailsViewController.swift */,
 				DEF45F13267CFDD5001B7351 /* Assets.xcassets */,
 				DEF45F15267CFDD5001B7351 /* LaunchScreen.storyboard */,
 				DEF45F18267CFDD5001B7351 /* Info.plist */,
@@ -151,7 +157,9 @@
 				DEF45F0B267CFDD3001B7351 /* AppDelegate.swift in Sources */,
 				DEF45F25267D2420001B7351 /* LibraryTableViewCell.swift in Sources */,
 				DEF45F0D267CFDD3001B7351 /* SceneDelegate.swift in Sources */,
+				DEF45F432680FE7A001B7351 /* PlaylistDetailTableViewCell.swift in Sources */,
 				DEF45F22267D0438001B7351 /* MusicService.swift in Sources */,
+				DEF45F3C2680FCFF001B7351 /* PlaylistDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

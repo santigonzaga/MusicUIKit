@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableOfLibrary: UITableView!
     let musicService = try? MusicService()
@@ -15,9 +15,9 @@ class ViewController: UIViewController, UITableViewDataSource {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        // ID: PlaylistCell
         
         tableOfLibrary.dataSource = self
+        tableOfLibrary.delegate = self
         playlist = musicService?.loadLibrary() ?? []
     }
     
@@ -37,7 +37,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toPlaylistDetails", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPlaylistDetails", let indexPath = sender as? IndexPath {
+            let destination = segue.destination as? PlaylistDetailsViewController
+            destination?.playlist = playlist[indexPath.row]
+        }
+    }
 
 }
 

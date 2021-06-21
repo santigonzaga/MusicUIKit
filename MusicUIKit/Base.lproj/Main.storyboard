@@ -112,22 +112,23 @@
                     <navigationItem key="navigationItem" title="Library" id="kjF-Ri-c8y"/>
                     <connections>
                         <outlet property="tableOfLibrary" destination="8Cx-0x-FEG" id="fu5-zM-F1S"/>
+                        <segue destination="zPg-kc-VhL" kind="show" identifier="toPlaylistDetails" id="EFD-jw-1BX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331.8840579710145" y="452.67857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Playlist Details View Controller-->
         <scene sceneID="yi0-dI-F7b">
             <objects>
-                <viewController id="zPg-kc-VhL" sceneMemberID="viewController">
+                <viewController id="zPg-kc-VhL" customClass="PlaylistDetailsViewController" customModule="MusicUIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JPn-6a-hFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-1L-ZSB">
-                                <rect key="frame" x="16" y="148" width="382" height="120"/>
+                                <rect key="frame" x="16" y="140" width="382" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1PH-jw-3P5">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -181,10 +182,10 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-BK-14c">
-                                <rect key="frame" x="0.0" y="284" width="414" height="612"/>
+                                <rect key="frame" x="0.0" y="276" width="414" height="620"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="72" id="Jlb-MR-iO5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="72" id="Jlb-MR-iO5" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlb-MR-iO5" id="8UN-yj-8kZ">
@@ -232,6 +233,11 @@
                                                 <constraint firstItem="wEY-fd-5Vl" firstAttribute="centerY" secondItem="8UN-yj-8kZ" secondAttribute="centerY" id="g2J-1r-OrC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistMusicLabel" destination="jdp-xg-zp5" id="EwU-0U-iuF"/>
+                                            <outlet property="imageCoverMusic" destination="3N1-pG-5oR" id="eAP-Go-m5D"/>
+                                            <outlet property="titleMusicLabel" destination="kdc-Vu-AZi" id="p08-7B-2lV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -239,7 +245,7 @@
                         <viewLayoutGuide key="safeArea" id="dKm-K6-bIh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nO5-1L-ZSB" firstAttribute="top" secondItem="dKm-K6-bIh" secondAttribute="top" constant="104" id="2Lx-6g-ELI"/>
+                            <constraint firstItem="nO5-1L-ZSB" firstAttribute="top" secondItem="dKm-K6-bIh" secondAttribute="top" id="2Lx-6g-ELI"/>
                             <constraint firstItem="Sc9-BK-14c" firstAttribute="leading" secondItem="dKm-K6-bIh" secondAttribute="leading" id="OZ3-IR-CKR"/>
                             <constraint firstItem="Sc9-BK-14c" firstAttribute="trailing" secondItem="dKm-K6-bIh" secondAttribute="trailing" id="Wtb-1t-yfC"/>
                             <constraint firstAttribute="bottom" secondItem="Sc9-BK-14c" secondAttribute="bottom" id="a1v-b3-bGD"/>
@@ -248,6 +254,15 @@
                             <constraint firstItem="nO5-1L-ZSB" firstAttribute="leading" secondItem="dKm-K6-bIh" secondAttribute="leading" constant="16" id="sG5-ub-u4Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lre-DP-teY"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="hiT-Wl-XlM" id="v6o-5u-b2s"/>
+                        <outlet property="detailTableview" destination="Jlb-MR-iO5" id="sqI-3R-yqA"/>
+                        <outlet property="imageCover" destination="1PH-jw-3P5" id="Uvy-7K-qUU"/>
+                        <outlet property="numberOfSongsLabel" destination="9th-vS-93Q" id="jCN-nR-v7C"/>
+                        <outlet property="releasedLabel" destination="HbA-nf-ZpO" id="1jE-bW-Hlu"/>
+                        <outlet property="titleLabel" destination="LTp-67-pHk" id="88S-mp-NGP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seB-ip-fVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
