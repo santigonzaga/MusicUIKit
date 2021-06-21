@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistCell" rowHeight="89" id="nVG-6h-8mK" customClass="LibraryTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nVG-6h-8mK" id="jN4-R7-y9n">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -185,8 +185,8 @@
                                 <rect key="frame" x="0.0" y="276" width="414" height="620"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="72" id="Jlb-MR-iO5" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" rowHeight="72" id="Jlb-MR-iO5" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlb-MR-iO5" id="8UN-yj-8kZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -199,8 +199,8 @@
                                                         <constraint firstAttribute="height" constant="50" id="x5x-wQ-WKA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-Vu-AZi">
-                                                    <rect key="frame" x="94" y="17" width="42.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-Vu-AZi">
+                                                    <rect key="frame" x="94" y="17" width="247" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -214,8 +214,8 @@
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" image="heart" catalog="system"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-xg-zp5">
-                                                    <rect key="frame" x="94" y="33" width="33" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-xg-zp5">
+                                                    <rect key="frame" x="94" y="39" width="247" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -223,11 +223,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kdc-Vu-AZi" firstAttribute="leading" secondItem="3N1-pG-5oR" secondAttribute="trailing" constant="12" id="1Ig-xh-NUt"/>
+                                                <constraint firstItem="wEY-fd-5Vl" firstAttribute="leading" secondItem="kdc-Vu-AZi" secondAttribute="trailing" constant="12" id="8EB-0E-t0B"/>
+                                                <constraint firstItem="wEY-fd-5Vl" firstAttribute="leading" secondItem="jdp-xg-zp5" secondAttribute="trailing" constant="12" id="981-V4-iRR"/>
                                                 <constraint firstAttribute="bottom" secondItem="3N1-pG-5oR" secondAttribute="bottom" constant="6" id="Bem-WG-PQ1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wEY-fd-5Vl" secondAttribute="trailing" constant="16" id="DIS-hB-6pK"/>
                                                 <constraint firstItem="jdp-xg-zp5" firstAttribute="leading" secondItem="3N1-pG-5oR" secondAttribute="trailing" constant="12" id="E2O-Xk-HdL"/>
-                                                <constraint firstItem="kdc-Vu-AZi" firstAttribute="top" secondItem="8UN-yj-8kZ" secondAttribute="topMargin" constant="6" id="TlU-uH-weO"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="jdp-xg-zp5" secondAttribute="bottom" constant="12" id="aF7-Ri-UJM"/>
+                                                <constraint firstItem="kdc-Vu-AZi" firstAttribute="top" relation="lessThanOrEqual" secondItem="8UN-yj-8kZ" secondAttribute="topMargin" constant="4" id="TlU-uH-weO"/>
+                                                <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="jdp-xg-zp5" secondAttribute="bottom" constant="4" id="Vn9-aD-wpQ"/>
                                                 <constraint firstItem="3N1-pG-5oR" firstAttribute="top" secondItem="8UN-yj-8kZ" secondAttribute="top" constant="6" id="cag-r5-Pn6"/>
                                                 <constraint firstItem="3N1-pG-5oR" firstAttribute="leading" secondItem="8UN-yj-8kZ" secondAttribute="leading" constant="16" id="eF6-5q-gxA"/>
                                                 <constraint firstItem="wEY-fd-5Vl" firstAttribute="centerY" secondItem="8UN-yj-8kZ" secondAttribute="centerY" id="g2J-1r-OrC"/>
@@ -235,6 +237,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistMusicLabel" destination="jdp-xg-zp5" id="EwU-0U-iuF"/>
+                                            <outlet property="favorite" destination="wEY-fd-5Vl" id="yud-NR-k8h"/>
                                             <outlet property="imageCoverMusic" destination="3N1-pG-5oR" id="eAP-Go-m5D"/>
                                             <outlet property="titleMusicLabel" destination="kdc-Vu-AZi" id="p08-7B-2lV"/>
                                         </connections>
@@ -257,9 +260,9 @@
                     <navigationItem key="navigationItem" id="lre-DP-teY"/>
                     <connections>
                         <outlet property="artistLabel" destination="hiT-Wl-XlM" id="v6o-5u-b2s"/>
-                        <outlet property="detailTableview" destination="Jlb-MR-iO5" id="sqI-3R-yqA"/>
                         <outlet property="imageCover" destination="1PH-jw-3P5" id="Uvy-7K-qUU"/>
                         <outlet property="numberOfSongsLabel" destination="9th-vS-93Q" id="jCN-nR-v7C"/>
+                        <outlet property="playlistTableView" destination="Sc9-BK-14c" id="Psd-Pz-OJx"/>
                         <outlet property="releasedLabel" destination="HbA-nf-ZpO" id="1jE-bW-Hlu"/>
                         <outlet property="titleLabel" destination="LTp-67-pHk" id="88S-mp-NGP"/>
                     </connections>

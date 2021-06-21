@@ -12,5 +12,6 @@ class PlaylistDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var imageCoverMusic: UIImageView!
     @IBOutlet weak var titleMusicLabel: UILabel!
     @IBOutlet weak var artistMusicLabel: UILabel!
+    @IBOutlet weak var favorite: UIButton!
     
 }
