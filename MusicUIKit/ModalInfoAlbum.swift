@@ -9,6 +9,9 @@ import UIKit
 
 class ModalInfoAlbum: UIViewController {
     
+    
+    var playlist: MusicCollection?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistCell" rowHeight="89" id="nVG-6h-8mK" customClass="LibraryTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nVG-6h-8mK" id="jN4-R7-y9n">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" rowHeight="72" id="Jlb-MR-iO5" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlb-MR-iO5" id="8UN-yj-8kZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -263,7 +263,7 @@
                     <navigationItem key="navigationItem" id="lre-DP-teY">
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="Im7-6F-dOi">
                             <connections>
-                                <segue destination="IIg-w6-egn" kind="presentation" id="DNo-LE-JId"/>
+                                <segue destination="IIg-w6-egn" kind="presentation" identifier="toAlbumInfo" id="10E-Ay-kDB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -294,7 +294,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="385" id="9f3-cR-erP" customClass="InfoAlbumTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="385"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="385"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9f3-cR-erP" id="hxO-NB-PTg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
@@ -369,7 +369,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="209" id="fwK-gV-mKF" customClass="InfoArtistTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="413" width="414" height="209"/>
+                                        <rect key="frame" x="0.0" y="409.5" width="414" height="209"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwK-gV-mKF" id="ZBe-eT-pnk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
+class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var imageCover: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,10 +20,21 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
     
     var playlist: MusicCollection?
     
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAlbumInfo"{
+            let destination = segue.destination as? ModalInfoAlbum
+            destination?.playlist = playlist
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
-        playlistTableView.dataSource = self
-        
         super.viewDidLoad()
+        playlistTableView.dataSource = self
+        playlistTableView.delegate = self
+//        playlistTableView.isHidden = true
         
         let date = playlist?.referenceDate
         let format = DateFormatter()
