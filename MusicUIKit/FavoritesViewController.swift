@@ -7,11 +7,37 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, UITableViewDataSource {
+   
     
+    @IBOutlet weak var favoritesTableView: UITableView!
+    var playlistFavorites: [Music] = []
     let musicService = try? MusicService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        favoritesTableView.dataSource = self
+        favoritesTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
+        playlistFavorites = musicService?.favoriteMusics ?? []
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playlistFavorites.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        guard let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistDetailTableViewCell else {
+            fatalError("Não foi possivel converter a celula para SongCell")
+        }
+        let music  = playlistFavorites[indexPath.row]
+        cell.artistMusicLabel.text = music.artist
+        cell.titleMusicLabel.text = music.title
+        cell.imageCoverMusic.image = musicService?.getCoverImage(forItemIded: music.id )
+        cell.music = music
+        cell.musicService = musicService
+        
+        return cell
     }
 }

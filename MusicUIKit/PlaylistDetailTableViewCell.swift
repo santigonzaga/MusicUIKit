@@ -33,7 +33,7 @@ class PlaylistDetailTableViewCell: UITableViewCell {
         guard let music = music, let musicService = musicService else {
             return
         }
-        var isFavorite = musicService.favoriteMusics.contains(music)
+        let isFavorite = musicService.favoriteMusics.contains(music)
 
         favorite.tintColor = isFavorite ? .systemRed : .black
         favorite.setImage(isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
