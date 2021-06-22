@@ -13,7 +13,6 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
     
     var playlist: MusicCollection?
     let musicService = try? MusicService()
-    var section = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if section == 2 {
+        if indexPath.row != 0 {
             guard let cell = albumInfoTableVIew.dequeueReusableCell(withIdentifier: "ArtistCell", for: indexPath) as? InfoArtistTableViewCell else {
                 fatalError("Não foi possivel converter a celula para ArtistCell")
             }
@@ -52,8 +51,6 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
             cell.numberOfSongsLabel.text = String(playlist?.musics.count ?? 0) + " Songs"
             cell.releasedLabel.text = "Released " + formattedDate
             cell.textInfoLabel.text = playlist?.albumDescription
-            
-            section += 1
             
             return cell
         }

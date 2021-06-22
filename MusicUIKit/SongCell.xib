@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" rowHeight="66" id="Vu2-bW-aKY" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vu2-bW-aKY" id="CAZ-tq-J9e">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xnw-Me-set">
+                        <rect key="frame" x="16" y="6" width="66" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="HHW-ej-Wps"/>
+                            <constraint firstAttribute="height" constant="50" id="Yvm-Za-3Iq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-zi-2Dm">
+                        <rect key="frame" x="94" y="17" width="225" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seP-ET-IRg">
+                        <rect key="frame" x="331" y="24" width="25" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="CsE-cy-y4g"/>
+                            <constraint firstAttribute="height" constant="24" id="QdB-1N-aCy"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteAction:" destination="Vu2-bW-aKY" eventType="touchUpInside" id="cne-dR-lMd"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-Bg-x6j">
+                        <rect key="frame" x="94" y="39" width="225" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="vvc-Bg-x6j" secondAttribute="bottom" constant="4" id="BKn-h6-ePY"/>
+                    <constraint firstItem="seP-ET-IRg" firstAttribute="leading" secondItem="6lE-zi-2Dm" secondAttribute="trailing" constant="12" id="KDK-Jf-QCo"/>
+                    <constraint firstItem="6lE-zi-2Dm" firstAttribute="leading" secondItem="xnw-Me-set" secondAttribute="trailing" constant="12" id="Vuw-wd-b4o"/>
+                    <constraint firstItem="6lE-zi-2Dm" firstAttribute="top" relation="lessThanOrEqual" secondItem="CAZ-tq-J9e" secondAttribute="topMargin" constant="4" id="XBL-2e-D3Y"/>
+                    <constraint firstItem="vvc-Bg-x6j" firstAttribute="leading" secondItem="xnw-Me-set" secondAttribute="trailing" constant="12" id="Y76-2o-VG7"/>
+                    <constraint firstItem="xnw-Me-set" firstAttribute="top" secondItem="CAZ-tq-J9e" secondAttribute="top" constant="6" id="aSz-au-9aT"/>
+                    <constraint firstAttribute="bottom" secondItem="xnw-Me-set" secondAttribute="bottom" constant="6" id="dTr-8q-JOH"/>
+                    <constraint firstItem="seP-ET-IRg" firstAttribute="leading" secondItem="vvc-Bg-x6j" secondAttribute="trailing" constant="12" id="lqm-u3-Gri"/>
+                    <constraint firstItem="xnw-Me-set" firstAttribute="leading" secondItem="CAZ-tq-J9e" secondAttribute="leading" constant="16" id="m6t-Kc-Xsc"/>
+                    <constraint firstItem="seP-ET-IRg" firstAttribute="centerY" secondItem="CAZ-tq-J9e" secondAttribute="centerY" id="rL2-WF-Cg0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="seP-ET-IRg" secondAttribute="trailing" constant="16" id="wP5-WY-cj0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="artistMusicLabel" destination="vvc-Bg-x6j" id="brG-n5-vz8"/>
+                <outlet property="favorite" destination="seP-ET-IRg" id="e4k-sZ-Chl"/>
+                <outlet property="imageCoverMusic" destination="xnw-Me-set" id="ihh-Vk-woc"/>
+                <outlet property="titleMusicLabel" destination="6lE-zi-2Dm" id="v0E-Ts-gfm"/>
+            </connections>
+            <point key="canvasLocation" x="-852.17391304347836" y="-51.5625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -21,6 +21,7 @@
 		DEF45F4C268182EC001B7351 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F4B268182EC001B7351 /* FavoritesViewController.swift */; };
 		DEF45F5126824DE8001B7351 /* InfoAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F5026824DE8001B7351 /* InfoAlbumTableViewCell.swift */; };
 		DEF45F5426824DFB001B7351 /* InfoArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF45F5326824DFB001B7351 /* InfoArtistTableViewCell.swift */; };
+		DEF45F592682726E001B7351 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF45F582682726E001B7351 /* SongCell.xib */; };
 		FD40B4F626816BB000251CB8 /* ModalInfoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD40B4F526816BB000251CB8 /* ModalInfoAlbum.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		DEF45F4B268182EC001B7351 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DEF45F5026824DE8001B7351 /* InfoAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlbumTableViewCell.swift; sourceTree = "<group>"; };
 		DEF45F5326824DFB001B7351 /* InfoArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoArtistTableViewCell.swift; sourceTree = "<group>"; };
+		DEF45F582682726E001B7351 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
 		FD40B4F526816BB000251CB8 /* ModalInfoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInfoAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				DEF45F24267D2420001B7351 /* LibraryTableViewCell.swift */,
 				DEF45F20267D0438001B7351 /* MusicService.swift */,
 				DEF45F10267CFDD3001B7351 /* Main.storyboard */,
+				DEF45F582682726E001B7351 /* SongCell.xib */,
 				DEF45F3B2680FCFF001B7351 /* PlaylistDetailsViewController.swift */,
 				DEF45F15267CFDD5001B7351 /* LaunchScreen.storyboard */,
 				DEF45F18267CFDD5001B7351 /* Info.plist */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF45F17267CFDD5001B7351 /* LaunchScreen.storyboard in Resources */,
+				DEF45F592682726E001B7351 /* SongCell.xib in Resources */,
 				DEF45F14267CFDD5001B7351 /* Assets.xcassets in Resources */,
 				DEF45F12267CFDD3001B7351 /* Main.storyboard in Resources */,
 				DEF45F21267D0438001B7351 /* data.json in Resources */,

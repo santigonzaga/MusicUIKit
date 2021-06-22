@@ -23,9 +23,9 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumInfo"{
-            let destination = segue.destination as? ModalInfoAlbum
-            destination?.playlist = playlist
-            
+            let destination = segue.destination as? UINavigationController
+            let modalInfoAlbum = destination?.viewControllers.first as? ModalInfoAlbum
+            modalInfoAlbum?.playlist = playlist
         }
     }
     
@@ -35,6 +35,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         playlistTableView.dataSource = self
         playlistTableView.delegate = self
 //        playlistTableView.isHidden = true
+        playlistTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
         
         let date = playlist?.referenceDate
         let format = DateFormatter()
