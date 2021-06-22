@@ -8,15 +8,6 @@
 import UIKit
 
 class ModalInfoAlbum: UIViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var cover: UIImageView!
-    @IBOutlet weak var numberOfSongs: UILabel!
-    @IBOutlet weak var band: UILabel!
-    @IBOutlet weak var album: UILabel!
-    @IBOutlet weak var releasedIn: UILabel!
-    @IBOutlet weak var text1: UILabel!
-    @IBOutlet weak var text2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

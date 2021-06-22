@@ -27,7 +27,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
         
         let date = playlist?.referenceDate
         let format = DateFormatter()
-        format.dateFormat = "MM dd, yyyy"
+        format.dateFormat = "MMM ddd, yyyy"
         let formattedDate = format.string(from: date!)
         
         titleLabel.text = playlist?.title
@@ -40,9 +40,6 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
                 infoButton.image = nil
             }
         }
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,5 +60,4 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-    
 }
