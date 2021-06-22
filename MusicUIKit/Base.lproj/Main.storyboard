@@ -353,7 +353,14 @@
                             <constraint firstItem="kix-iP-80E" firstAttribute="top" secondItem="ejz-20-Zee" secondAttribute="top" id="haE-5B-pIs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="cIC-v2-ezX"/>
+                    <navigationItem key="navigationItem" title="About" id="cIC-v2-ezX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.down" catalog="system" style="plain" id="Tmh-Gm-rF7">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="dismissScreen:" destination="IIg-w6-egn" id="b95-MR-z9c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="albumInfoTableVIew" destination="kix-iP-80E" id="UQR-em-AO8"/>
                     </connections>
@@ -477,6 +484,7 @@
     </scenes>
     <resources>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
