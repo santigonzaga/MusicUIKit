@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmW-CS-CNB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaylistCell" rowHeight="89" id="nVG-6h-8mK" customClass="LibraryTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nVG-6h-8mK" id="jN4-R7-y9n">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" rowHeight="72" id="Jlb-MR-iO5" customClass="PlaylistDetailTableViewCell" customModule="MusicUIKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlb-MR-iO5" id="8UN-yj-8kZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -260,10 +260,13 @@
                             <constraint firstItem="nO5-1L-ZSB" firstAttribute="leading" secondItem="dKm-K6-bIh" secondAttribute="leading" constant="16" id="sG5-ub-u4Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lre-DP-teY"/>
+                    <navigationItem key="navigationItem" id="lre-DP-teY">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="Im7-6F-dOi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="artistLabel" destination="hiT-Wl-XlM" id="v6o-5u-b2s"/>
                         <outlet property="imageCover" destination="1PH-jw-3P5" id="Uvy-7K-qUU"/>
+                        <outlet property="infoButton" destination="Im7-6F-dOi" id="X7Q-SC-gBI"/>
                         <outlet property="numberOfSongsLabel" destination="9th-vS-93Q" id="jCN-nR-v7C"/>
                         <outlet property="playlistTableView" destination="Sc9-BK-14c" id="Psd-Pz-OJx"/>
                         <outlet property="releasedLabel" destination="HbA-nf-ZpO" id="1jE-bW-Hlu"/>
@@ -333,6 +336,7 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

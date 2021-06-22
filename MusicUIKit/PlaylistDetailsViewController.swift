@@ -16,6 +16,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var releasedLabel: UILabel!
     let musicService = try? MusicService()
     @IBOutlet weak var playlistTableView: UITableView!
+    @IBOutlet weak var infoButton: UIBarButtonItem!
     
     var playlist: MusicCollection?
     
@@ -34,6 +35,14 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
         numberOfSongsLabel.text = String(playlist?.musics.count ?? 0) + " Songs"
         imageCover.image = musicService?.getCoverImage(forItemIded: playlist?.id ?? "")
         releasedLabel.text = "Released " + formattedDate
+        if let  a = playlist?.supportsEdition {
+            if a {
+                infoButton.image = nil
+            }
+        }
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,5 +63,5 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-
+    
 }
