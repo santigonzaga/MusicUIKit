@@ -72,45 +72,21 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        print("Deleted1")
-//        if let  a = playlist?.supportsEdition {
-//            print("Deleted2")
-//            if a {
-//                if editingStyle == .delete {
-//
-//                    if let musicDelete = playlist?.musics[indexPath.row], let playlist = playlist {
-//                        musicService?.removeMusic(musicDelete, from: playlist)
-//                    }
-//                    self.playlistTableView.deleteRows(at: [indexPath], with: .automatic)
-//                }
-//            }
-//        }
-//    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = deleteAction(at: indexPath)
-        print(playlist ?? [])
-        print(playlist?.musics.count ?? 0)
-        return UISwipeActionsConfiguration(actions: [delete])
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return playlist?.type == .playlist
+        
     }
-    
-    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
-            if let musicDelete = self.playlist?.musics[indexPath.row], let playlist = self.playlist {
-                self.musicService?.removeMusic(musicDelete, from: playlist)
-            }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            musicService!.removeMusic(playlist!.musics[indexPath.row] , from: playlist!)
+            loadData()
             self.playlistTableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        action.title = "Delete"
-        action.backgroundColor = .red
-        playlistTableView.reloadData()
-        return action
     }
-    
+    func loadData(){
+        guard let playlist = playlist else{return}
+        let updatedPlaylist = musicService?.getCollection(id: playlist.id)
+        self.playlist = updatedPlaylist
+    }
 }

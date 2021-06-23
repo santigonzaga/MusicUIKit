@@ -29,6 +29,16 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoritesTableView.reloadData()
+        guard let ms = musicService else {
+            return
+        }
+        playlistFavorites = ms.favoriteMusics
+        favoritesTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playlistFavorites.count
     }
@@ -47,4 +57,5 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
 }
