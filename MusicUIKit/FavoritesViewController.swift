@@ -19,7 +19,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         favoritesTableView.dataSource = self
         favoritesTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
-        playlistFavorites = musicService?.favoriteMusics ?? []
         
         if playlistFavorites.count == 0 {
             favoritesTableView.isHidden = true
@@ -28,7 +27,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
             favoritesTableView.isHidden = false
             noFavoritesStack.isHidden = true
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

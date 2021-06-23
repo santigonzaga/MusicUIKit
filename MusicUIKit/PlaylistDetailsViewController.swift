@@ -20,7 +20,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
     
     var playlist: MusicCollection?
     
-   
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumInfo"{
             let destination = segue.destination as? UINavigationController
@@ -34,7 +34,6 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         playlistTableView.dataSource = self
         playlistTableView.delegate = self
-//        playlistTableView.isHidden = true
         playlistTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
         
         let date = playlist?.referenceDate
@@ -47,6 +46,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         numberOfSongsLabel.text = String(playlist?.musics.count ?? 0) + " Songs"
         imageCover.image = musicService?.getCoverImage(forItemIded: playlist?.id ?? "")
         releasedLabel.text = "Released " + formattedDate
+        
         if let  a = playlist?.supportsEdition {
             if a {
                 infoButton.image = nil
@@ -72,4 +72,45 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        print("Deleted1")
+//        if let  a = playlist?.supportsEdition {
+//            print("Deleted2")
+//            if a {
+//                if editingStyle == .delete {
+//
+//                    if let musicDelete = playlist?.musics[indexPath.row], let playlist = playlist {
+//                        musicService?.removeMusic(musicDelete, from: playlist)
+//                    }
+//                    self.playlistTableView.deleteRows(at: [indexPath], with: .automatic)
+//                }
+//            }
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        print(playlist ?? [])
+        print(playlist?.musics.count ?? 0)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
+            if let musicDelete = self.playlist?.musics[indexPath.row], let playlist = self.playlist {
+                self.musicService?.removeMusic(musicDelete, from: playlist)
+            }
+            self.playlistTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        action.title = "Delete"
+        action.backgroundColor = .red
+        playlistTableView.reloadData()
+        return action
+    }
+    
 }

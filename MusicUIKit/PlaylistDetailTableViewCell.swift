@@ -24,7 +24,6 @@ class PlaylistDetailTableViewCell: UITableViewCell {
         musicService.toggleFavorite(music: music, isFavorite: isFavorite)
         isFavorite = !isFavorite
         
-        
         favorite.tintColor = isFavorite ? .systemRed : .black
         favorite.setImage(isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
     }
