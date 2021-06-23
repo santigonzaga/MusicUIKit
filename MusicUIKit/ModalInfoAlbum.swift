@@ -11,8 +11,6 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var albumInfoTableVIew: UITableView!
     
-    
-    @IBOutlet weak var dismissScreen: UIBarButtonItem!
     var playlist: MusicCollection?
     let musicService = try? MusicService()
     
@@ -21,10 +19,9 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
         albumInfoTableVIew.dataSource = self
 
     }
+    
     @IBAction func dismissScreen(_ sender: Any) {
-        
-        
-        
+        navigationController?.dismiss(animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
