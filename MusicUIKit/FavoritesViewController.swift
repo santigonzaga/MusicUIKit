@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDataSource {
+class FavoritesViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
    
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var favoritesTableView: UITableView!
     @IBOutlet weak var noFavoritesStack: UIStackView!
     var playlistFavorites: [Music] = []
@@ -19,6 +19,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         favoritesTableView.dataSource = self
         favoritesTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
+        playlistFavorites = musicService?.favoriteMusics ?? []
         
         if playlistFavorites.count == 0 {
             favoritesTableView.isHidden = true
@@ -29,15 +30,27 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        favoritesTableView.reloadData()
-        guard let ms = musicService else {
-            return
-        }
+    func loadFavorites() {
+        guard let ms = musicService else {return}
         playlistFavorites = ms.favoriteMusics
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        loadFavorites()
+        if !playlistFavorites.isEmpty {
+            self.playlistFavorites = self.playlistFavorites.filter({ music in
+                return music.title.lowercased().contains(searchText.lowercased()) ||  music.artist.lowercased().contains(searchText.lowercased())
+            })
+        }
         favoritesTableView.reloadData()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        favoritesTableView.reloadData()
+//        loadfavorites()
+//        favoritesTableView.reloadData()
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playlistFavorites.count

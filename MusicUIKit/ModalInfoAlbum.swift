@@ -17,7 +17,6 @@ class ModalInfoAlbum: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         albumInfoTableVIew.dataSource = self
-
     }
     
     @IBAction func dismissScreen(_ sender: Any) {

@@ -439,6 +439,7 @@
                     <connections>
                         <outlet property="favoritesTableView" destination="rJg-WI-AZu" id="LB7-za-zgD"/>
                         <outlet property="noFavoritesStack" destination="o6v-7m-EaL" id="38p-Mz-dCk"/>
+                        <outlet property="searchBar" destination="NK7-Ow-4wg" id="AzU-PB-ypy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDC-p9-rg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -75,8 +75,8 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return playlist?.type == .playlist
-        
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             musicService!.removeMusic(playlist!.musics[indexPath.row] , from: playlist!)
@@ -84,6 +84,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
             self.playlistTableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
     func loadData(){
         guard let playlist = playlist else{return}
         let updatedPlaylist = musicService?.getCollection(id: playlist.id)
