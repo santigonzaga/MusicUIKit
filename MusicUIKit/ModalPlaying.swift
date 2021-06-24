@@ -16,6 +16,8 @@ class ModalPlaying: UIViewController {
     @IBOutlet weak var musicName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var musicSlider: UISlider!
+    @IBOutlet weak var falta: UILabel!
+    @IBOutlet weak var atual: UILabel!
     var music : Music?
     var musicService: MusicService?
     @IBAction func likeDislike(_ sender: Any) {
@@ -37,13 +39,16 @@ class ModalPlaying: UIViewController {
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
         guard let music = music , let musicService = musicService else{
+
             return
             
         }
         cover.image = musicService.getCoverImage(forItemIded: music.id)
         musicName.text =  music.title
         artistName.text = music.artist
-        
+        atual.text = "00:59"
+        falta.text = String("\(Int(music.length/60)):\(Int(Int(music.length)%60))")
+//
         
         
     }
