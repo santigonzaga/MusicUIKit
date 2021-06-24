@@ -14,13 +14,12 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var numberOfSongsLabel: UILabel!
     @IBOutlet weak var releasedLabel: UILabel!
-    let musicService = try? MusicService()
     @IBOutlet weak var playlistTableView: UITableView!
     @IBOutlet weak var infoButton: UIBarButtonItem!
-    
     @IBOutlet weak var playingNow: playerView!
     
     var playlist: MusicCollection?
+    let musicService = try? MusicService()
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,6 +33,12 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         self.playlistTableView.reloadData()
+        if let playlist = playlist, let musicService = musicService {
+            musicService.startPlaying(collection: playlist)
+        }
+        playingNow.coverImage.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
+        playingNow.artistName.text = musicService?.queue.nowPlaying?.artist
+        playingNow.musicName.text = musicService?.queue.nowPlaying?.title
     }
     
     override func viewDidLoad() {
@@ -58,7 +63,10 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
                 infoButton.image = nil
             }
         }
-        playingNow.labelTest.text = "ALELUIA sorvetinho"
+        
+        playingNow.coverImage.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
+        playingNow.artistName.text = musicService?.queue.nowPlaying?.artist
+        playingNow.musicName.text = musicService?.queue.nowPlaying?.title
         
     }
     
@@ -79,6 +87,15 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         cell.musicService = musicService 
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let musicService = musicService, let music = playlist?.musics[indexPath.row] {
+            musicService.startPlaying(music:  music)
+        }
+        playingNow.coverImage.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
+        playingNow.artistName.text = musicService?.queue.nowPlaying?.artist
+        playingNow.musicName.text = musicService?.queue.nowPlaying?.title
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
