@@ -18,6 +18,8 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var playlistTableView: UITableView!
     @IBOutlet weak var infoButton: UIBarButtonItem!
     
+    @IBOutlet weak var playingNow: playerView!
+    
     var playlist: MusicCollection?
     
     
@@ -56,6 +58,8 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
                 infoButton.image = nil
             }
         }
+        playingNow.labelTest.text = "ALELUIA sorvetinho"
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
