@@ -101,6 +101,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let musicService = musicService, let music = playlist?.musics[indexPath.row] {
             musicService.startPlaying(music:  music)
         }
