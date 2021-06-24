@@ -36,6 +36,15 @@ class ModalPlaying: UIViewController {
         super.viewDidLoad()
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
+        guard let music = music , let musicService = musicService else{
+            return
+            
+        }
+        cover.image = musicService.getCoverImage(forItemIded: music.id)
+        musicName.text =  music.title
+        artistName.text = music.artist
+        
+        
         
     }
     

@@ -28,15 +28,17 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
             let modalInfoAlbum = destination?.viewControllers.first as? ModalInfoAlbum
             modalInfoAlbum?.playlist = playlist
         }
-//        else if segue.identifier == "toPlayingModalView" {
-//            guard let indexPath = sender as? IndexPath else {return}
-//
-//                let destination = segue.destination as? UINavigationController
-//                let modalPlaying = destination?.viewControllers.first as? ModalPlaying
+        else if segue.identifier == "toPlayingModalView" {
+            guard let indexPath = sender as? IndexPath else {return}
+
+                let destination = segue.destination as? UINavigationController
+                let modalPlaying = destination?.viewControllers.first as? ModalPlaying
 //            modalPlaying?.artistName.text = playlist[indexPath.row].mainPerson
-//
-//
-//        }
+          
+            modalPlaying?.music = playlist?.musics[indexPath.row]
+            modalPlaying?.musicService = musicService
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
