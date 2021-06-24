@@ -28,6 +28,15 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
             let modalInfoAlbum = destination?.viewControllers.first as? ModalInfoAlbum
             modalInfoAlbum?.playlist = playlist
         }
+//        else if segue.identifier == "toPlayingModalView" {
+//            guard let indexPath = sender as? IndexPath else {return}
+//
+//                let destination = segue.destination as? UINavigationController
+//                let modalPlaying = destination?.viewControllers.first as? ModalPlaying
+//            modalPlaying?.artistName.text = playlist[indexPath.row].mainPerson
+//
+//
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,8 +105,9 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         playingNow.coverImage.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
         playingNow.artistName.text = musicService?.queue.nowPlaying?.artist
         playingNow.musicName.text = musicService?.queue.nowPlaying?.title
+        performSegue(withIdentifier: "toPlayingModalView", sender: indexPath)
     }
-
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return playlist?.type == .playlist
     }
