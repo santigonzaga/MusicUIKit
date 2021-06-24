@@ -18,6 +18,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UISearch
     override func viewDidLoad() {
         super.viewDidLoad()
         favoritesTableView.dataSource = self
+        searchBar.delegate = self
         favoritesTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "SongCell")
         playlistFavorites = musicService?.favoriteMusics ?? []
         
@@ -34,6 +35,11 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UISearch
         guard let ms = musicService else {return}
         playlistFavorites = ms.favoriteMusics
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadFavorites()
+        self.favoritesTableView.reloadData()
+    }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         loadFavorites()
@@ -41,16 +47,13 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UISearch
             self.playlistFavorites = self.playlistFavorites.filter({ music in
                 return music.title.lowercased().contains(searchText.lowercased()) ||  music.artist.lowercased().contains(searchText.lowercased())
             })
+            
+            if playlistFavorites.isEmpty && searchText == "" {
+                loadFavorites()
+            }
         }
-        favoritesTableView.reloadData()
+        self.favoritesTableView.reloadData()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        favoritesTableView.reloadData()
-//        loadfavorites()
-//        favoritesTableView.reloadData()
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playlistFavorites.count

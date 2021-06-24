@@ -29,6 +29,10 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        self.playlistTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +42,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
         
         let date = playlist?.referenceDate
         let format = DateFormatter()
-        format.dateFormat = "MMM ddd, yyyy"
+        format.dateFormat = "MMM dd, yyyy"
         let formattedDate = format.string(from: date!)
         
         titleLabel.text = playlist?.title
