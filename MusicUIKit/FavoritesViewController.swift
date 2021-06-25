@@ -29,6 +29,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UISearch
             favoritesTableView.isHidden = false
             noFavoritesStack.isHidden = true
         }
+        
     }
     
     func loadFavorites() {

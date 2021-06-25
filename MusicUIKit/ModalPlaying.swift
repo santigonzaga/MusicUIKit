@@ -35,6 +35,7 @@ class ModalPlaying: UIViewController {
         navigationController?.dismiss(animated: true)
     }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
         musicSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
@@ -48,8 +49,12 @@ class ModalPlaying: UIViewController {
         artistName.text = music.artist
         atual.text = "00:59"
         falta.text = String("\(Int(music.length/60)):\(Int(Int(music.length)%60))")
-//
+// 
         
+        let isFavorite = musicService.favoriteMusics.contains(music)
+
+        favoriteButton.tintColor = isFavorite ? .systemRed : .black
+        favoriteButton.setImage(isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         
     }
     

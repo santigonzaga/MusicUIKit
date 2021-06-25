@@ -34,7 +34,7 @@ class PlaylistDetailsViewController: UIViewController, UITableViewDataSource, UI
                 let destination = segue.destination as? UINavigationController
                 let modalPlaying = destination?.viewControllers.first as? ModalPlaying
 //            modalPlaying?.artistName.text = playlist[indexPath.row].mainPerson
-          
+            
             modalPlaying?.music = playlist?.musics[indexPath.row]
             modalPlaying?.musicService = musicService
             

@@ -534,13 +534,14 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-Gf-r1f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-Gf-r1f">
                                 <rect key="frame" x="340" y="483" width="30" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="5Qg-Wz-eav"/>
                                     <constraint firstAttribute="width" constant="30" id="92y-32-brw"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="heart" catalog="system"/>
                                 <connections>
                                     <action selector="likeDislike:" destination="jHX-CQ-jXi" eventType="touchUpInside" id="1PY-14-FTE"/>
                                 </connections>
@@ -691,11 +692,15 @@
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash" catalog="system" width="128" height="115"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pause.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
